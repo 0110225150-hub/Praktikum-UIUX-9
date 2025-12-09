@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praktikum Kurs Rupiah</title>
     <style>
-        /* Styling sederhana agar mirip dengan soal */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -71,36 +70,28 @@
     </fieldset>
 
     <script>
-        // Fungsi Utama JavaScript
         function konversiKurs() {
-            // 1. Ambil nilai dari input user
             let nilaiAsing = document.getElementById("nilai_asing").value;
             
-            // 2. Ambil nilai kurs dari dropdown (value di option HTML sudah kita set sesuai soal)
             let kurs = document.getElementById("pilihan_valas").value;
             
-            // 3. Ambil elemen output untuk menampilkan hasil
             let outputRupiah = document.getElementById("nilai_rupiah");
 
-            // 4. Logika Perhitungan
-            // Cek apakah nilai valid (tidak kosong)
             if (nilaiAsing !== "" && kurs !== "0") {
                 let hasil = nilaiAsing * kurs;
 
-                // Format hasil ke format mata uang Indonesia (Rp.)
                 let formatRupiah = new Intl.NumberFormat('id-ID', {
                     style: 'currency',
                     currency: 'IDR'
                 }).format(hasil);
 
-                // Tampilkan hasil di kotak output
                 outputRupiah.value = formatRupiah;
             } else {
-                // Jika data kosong, reset output
                 outputRupiah.value = "";
             }
         }
     </script>
 
 </body>
+
 </html>
